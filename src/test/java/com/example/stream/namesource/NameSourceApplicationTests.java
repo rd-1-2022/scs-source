@@ -32,7 +32,7 @@ class NameSourceApplicationTests {
 				.run()) {
 
 			OutputDestination target = context.getBean(OutputDestination.class);
-			Message<byte[]> sourceMessage = target.receive(10000, "processorinput");
+			Message<byte[]> sourceMessage = target.receive(10000, "supplyName-out-0");
 
 			MessageConverter converter = context.getBean(CompositeMessageConverter.class);
 
