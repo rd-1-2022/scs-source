@@ -1,4 +1,4 @@
-== Basic Spring Cloud Source Application
+# Basic Spring Cloud Source Application
 
 This project contains a Spring Cloud Source applications that publishes a String at a regular interval to initiate the stream. For this example, publish a name as a String.
 
@@ -18,7 +18,7 @@ and
 spring cli new scs-sink
 ```
 
-== Prerequisites
+## Prerequisites
 
 To use Spring Cloud Stream functionality, we need to ensure that a message broker is accessible. For this guide, we use RabbitMQ. If a local Docker environment is found, the following command can start RabbitMQ:
 
@@ -29,7 +29,7 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:567
 The result is that RabbitMQ should be accessible locally with the username/password of guest/guest.
 
 
-== Building the Source Application
+## Building the Source Application
 
 ```
 ./mvnw clean package
@@ -39,7 +39,7 @@ This runs unit tests, which are a bit advanced to explain in a short getting sta
 The Spring Cloud Stream reference docs have more information.
 
 
-== Running the Source Application
+## Running the Source Application
 ```
 ./mnvw spring-boot:run
 ```
@@ -64,7 +64,7 @@ spring.cloud.stream.function.bindings.supplyName-out-0=processorinput
 When using this application in conjunction with the `Processor` sample application, the name used for the output of the `Source` should match the name of the input for the `Processor`.  This is already setup for both applications.
 
 
-=== Multiple Functions in one applicaiton
+### Multiple Functions in one applicaiton
 
 More than one Java 8 Function can exist in a single application.  
 If you would like to add the `Processor` and `Sink` to the same application as the source, use the following Spring CLI commands.
